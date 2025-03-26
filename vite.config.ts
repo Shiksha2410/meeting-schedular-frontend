@@ -10,6 +10,7 @@ export default defineConfig({
     strictPort: false, // Allow fallback to another port if the specified one is in use
     open: true,
     cors: true,
+    allowedHosts: ["meeting-schedular-frontend.onrender.com"], // Allow the specified host
   },
   resolve: {
     alias: {
