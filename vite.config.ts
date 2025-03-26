@@ -5,10 +5,11 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
-    strictPort: true,
-    open: true, // Automatically opens the browser
-    cors: true, // Enables CORS
+    port: process.env.PORT ? parseInt(process.env.PORT) : (process.env.VITE_PORT ? parseInt(process.env.VITE_PORT) : 5173), // Dynamically bind to any port
+    host: "0.0.0.0", // Expose the server to external access
+    strictPort: false, // Allow fallback to another port if the specified one is in use
+    open: true,
+    cors: true,
   },
   resolve: {
     alias: {
