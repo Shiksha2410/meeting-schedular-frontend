@@ -5,7 +5,7 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: process.env.VITE_PORT ? parseInt(process.env.VITE_PORT) : 5173,
+    port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
     strictPort: true,
     open: true, // Automatically opens the browser
     cors: true, // Enables CORS
